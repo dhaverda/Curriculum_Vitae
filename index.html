@@ -1,144 +1,499 @@
-<!--
-    Author: Matthieu Hédoin
-    Done with Visual Studio Code
--->
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8"/>
-        <title>CV Matthieu Hédoin HTML/CSS</title>
-        <style type="text/css">
-            .page
-            {
-                background-color: antiquewhite;
-                width: 820px;
-                margin: auto;
-                font-size: 16px;
-                font-family: 'Centhury Gothic', Calibri, Tahoma, sans-serif;
-            }
-            .infophoto
-            {
-                height: 160px;
-                background-color: grey;
-            }
-            .info
-            {
-                margin-left: 10px;
-                float: left;
-                color: antiquewhite;
-            }
-            .logo
-            {
+<head>
+    <link rel="shortcut icon" type="image/png" href="favicon.png"/>
+    <title>Matthieu H&eacute;doin</title>
+    <meta charset="utf-8">
+    <meta name="viewport"content="width=device-width, initial-scale=1, user-scalable=no">
+</head>
+<style>
+    /*STYLES GENERAUX*/
+*{
+    font-family: Avenir, sans-serif;
+    padding: 0px;
+    margin: 0px;
+    text-align: justify;
+    box-sizing: border-box;
+}
+body{
+    background: #ededed;
+}
+p{
+    font-size: 1em;
+    line-height: 1.5em;
+}
+a{
+    text-decoration: none;
+    color: #000;
+}
+meter{
+    width: 100%;
+}
+/*HEADER & FOOTER*/
+header, footer{
+    width: 100%;
+    padding: 20px 0px;
+    background-color:#4f4f4f;
+    box-shadow: 0px 0px 15px #333;
+}
+header{
+    border-bottom: 2px solid #fff;
+    height: 120px;
+}
+header h1{
+    color: white;
+    font-size: 1.5em;
+    width: 90%;
+    margin: 0 auto;
+}
 
-                margin-right: 5px;
-                float: right;
-            }
-            .section
-            {
-                margin-left: 10px;
-                margin-right: 10px;
-                margin-bottom: 45px;
-                text-align: justify;
-            }
-            .sectiontitre
-            {
-                margin-left: 10px;
-                margin-right: 10px;
-                margin-bottom: 15px;
-                text-align: center;
-                border-bottom: 4px solid black;
-                color: #015B7D;
-            }
-            h2
-            {
-                color: #121212;
-                border-bottom: 4px solid red;
+footer{
+    border-top: 2px solid #fff;
+}
+footer p{
+    width: 90%;
+    margin: 0 auto;
+    color: #fff;
+    text-align: center;
+}
+footer a{
+    color: #fff;
+}
 
-            }
-            .intitule
-            {
-                font-weight:bold;
-            }
-            .contact
-            {
-                margin-left: 10px;
-                margin-right: 10px;
-                margin-bottom: 15px;
-                text-align: center;
-                color: black;
-                font-weight: bold;
-            }
-        </style>
-    </head>
-    <body>
+/*SECTIONS*/
+section{
+    display: flex; 
+    flex-flow: row wrap;
+    justify-content: center;
+    width: 100%;
+    padding-bottom: 20px;
+    margin: 20px auto;
+    box-shadow: 0px 0px 10px #bbb;
+    background-color: #fff;
+}
+
+section h2{
+    margin: 20px 0;
+    width: 90%;
+}
+section > div{
+    width: 90%;
+}
+
+/*SECTION INFOS*/
+.photo{
+    text-align: center;
+}
+.photo img{
+    width: 150px;
+    height: 150px;
+    border: 3px solid #fff;
+    box-shadow: 0px 0px 10px #777;
+    border-radius: 50%;
+    margin-top: -80px;
+}
+.prez{
+    border-bottom: 2px dashed #ccc;
+}
+.prez a{
+    display: block;
+    text-align: center;
+    padding: 10px;
+    margin: 10px auto 30px auto;
+    color: #fff;
+    background-color: grey;
+    box-shadow: 0px 0px 10px #ccc;
+    border-radius: 5px;
+}
+.contact-flex{
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+}
+.contact-flex p:first-child{
+    flex: 0 0 40%;
+}
+.contact-flex p:last-child{
+    flex: 0 0 60%;
+}
+.social{
+    display: flex;
+    justify-content: space-around;
+    margin: 10px auto 0px auto;
+}
+.social img{
+    width: 40px;
+    height: 40px;
+}
+
+/*SECTION EXP ET FORMATION*/
+.exp{
+    display: flex;
+    flex-flow: row wrap;
+    border-bottom: 1px solid #bbb;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+.exp-info{
+    display: flex;
+    flex-flow: column wrap;
+}
+.exp-logo{
+    flex: 0 0 25%;
+    max-width: 100px;
+}
+.exp-info{
+    flex: 0 0 70%;
+    margin-left: auto;
+}
+.exp img{
+    width: 100%;
+}
+.exp h3{
+    font-size:  1.2em;
+}
+.exp h4{
+    font-size:  1em;
+    font-weight: normal;
+}
+
+/*SECTION COMPETENCES*/
+.h3gauche{
+    width: 90%;
+}
+.comp{
+    display:flex;
+    flex-flow: row wrap;
+    margin-bottom: 10px;
+}
+.comp p{
+    flex: 0 0 40%;
+}
+.conteneur-barre{
+    flex: 0 0 60%;
+    border-radius: 5px;
+    background-color: grey;
+    border-bottom: 1px ridge grey;
+}
+.barre{
+    display: block;
+    height: 100%;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+.c85{
+    width: 85%;
+    background-color: #8B8;
+}
+.c90{
+    width: 90%;
+    background-color: #4B8;
+}
+.c95{
+    width: 95%;
+    background-color: #4B8;
+}
+.c100{
+    width: 100%;
+    background-color: #4B8;
+    border-radius: 5px;
+}
+.comp2{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+}
+.conteneur-barre2{
+    flex: 0 0 100%;
+    height: 0.5em;
+    margin-bottom: 0.25em;
+    border-radius: 5px;
+    background-color: grey;
+}
+
+/*SECTION INTERETS*/
+.interet{
+    flex: 0 1 50%;
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.interet img{
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    box-shadow: 0px 0px 15px #555;
+}
+
+/*VERSION BUREAU DU CV*/
+@media screen and (min-width: 980px){
+    meter{
+        width: 100%;
+    }
+    section{
+        width: 80%;
+        box-shadow: 0px 0px 10px #bbb;
+    }
+    a:hover{
+        font-weight: bold;
+    }
+    header h1{
+        width: 80%;
+    }
+    .prez, .contact{
+        flex: 0 0 45%;
+    }
+    .prez{
+        border-bottom: none;
+        border-right: 2px solid #ccc;
+        padding-right: 20px;
+        margin-left: auto;
+    }
+    .contact{
+        padding-left: 20px;
+        margin-right: auto;
+    }
+    .prez a{
+        border: 2px solid transparent;
+    }
+    .prez a:hover{
+        color: #fff;
+        background-color: #000;
+        border: 2px solid orange;
+        box-shadow: 0px 0px 20px #666;
+    }
+    .exp-logo{
+        flex: 0 0 10%;
+    }
+    .exp-info, .exp-desc{
+        flex: 0 0 85%;
+        margin-left: auto;
+    }
+    .interet{
+        flex: 0 1 25%;
+    }
+}
+</style>
+
+<body>
+    <header>
+        <h1>Candidature spontann&eacute;e pour une alternance</h1>
+    </header>
     
-        <div class="page">
-           <div class="infophoto">
-              <div class="info">
-                    <p><strong>Matthieu H&eacute;doin (Age: 21 ans)</strong><br/>
-                    Adresse: 3 rue des Ebouloirs 80250 Jumel, France<br/>
-                    T&eacute;l&eacute;phone:<a href="tel:+33610567857">+33 6 10 56 78 57</a><br/>
-                    Mail:<a href="mailto:hedoinm@gmail.com">hedoinm@gmail.com</a><br/>
-                    Permis B (v&eacute;hicul&eacute;)</p>
-                </div>
-               
-            </div>
-            
-            
-            <div class="section">
-                <h2>Exp&eacute;riences professionnelles</h2>
-                <span class="intitule">Développeur Back-End Apprenti</span><br/>
-                    - Création de sites Web<br/>
-                    - Support Informatique<br/>
-
-                <span class="intitule">• Projet Acad&eacute;mique (janvier 2020 - juin 2020)</span><br/>
-                    - R&eacute;alisation d'une valise de tir pyrotechnique<br/>
-                    - Travail en &eacute;quipe (3 &eacute;tudiants)<br/>
-                <span class="intitule">• Stagiaire à l’<a href="https://www.souffledelaterre.com/">association des Spectacles d'Ailly sur Noye (mai 2019 - juin 2019)</a></span><br/>
-                    - Support informatique de niveau 1<br/>
-                    - Cr&eacute;ation d'une application de gestion de la signalétique et des accessoires<br/>
-                <span class="intitule">• Jobs d’été</span><br/>
-                    - Magasinier saisonnier &agrave; <a href="https://www.noriap.com/">Noriap</a> (juillet 2020)<br/>
-                    - Ouvrier agricole &agrave; SARL Pomm'r&eacute;colte (aout 2019)<br/>
-            </div>
-        <div class="section">
-              <h2>Formations</h2>
-                    <span class="intitule"> &#47;&#47; Licence Professionnelle Réseaux et Génie Informatique</span><br/>
-                    <a href="https://www.promeo-formation.fr/">PROMEO Formation</a> - Beauvais, France<br/>
-                    <a href="https://www.agence-ewill.com/">Ewill</a> - Amiens, France<br/>
-                    Octobre 2020 - Septembre 2021<br/>
-                    <br/>
-                    <span class="intitule"> &#47;&#47; Brevet de Technicien Sup&eacute;rieur Syst&egrave;mes Num&eacute;riques option Informatique et R&eacute;seaux</span><br/>
-                    <a href="https://edouard-branly.ac-amiens.fr/"> Lyc&eacute;e Edouard Branly</a> - Amiens, France<br/>
-                    Septembre 2018 - Juillet 2020<br/>
-                    <br/>
-                    <span class="intitule"> &#47;&#47; Baccalaur&eacute;at s&eacute;rie Scientifique, sp&eacute;cialit&eacute; SCIENCES DE L'INGENIEUR, SECTION EUROPEENNE: anglais</span><br/>
-                    <a href="https://edouard-branly.ac-amiens.fr/"> Lyc&eacute;e Edouard Branly</a> - Amiens, France<br/>
-                    Septembre 2016 - Juillet 2018<br/>
-                    <br/>
-                    <span class="intitule"> &#47;&#47; Formation Artificier F4-T2</span><br/>
-                    <a href="http://www.brezac-artifices.com/">BREZAC</a>- Montigny en Ostrevent, France<br/>
-                    Novembre / Décembre 2021
-            </div>
-            <div class="section">
-                <h2>Comp&eacute;tences</h2>
-                <strong>Informatique:</strong><br/>
-                    – Utilisation de la suite <a href="https://www.office.com/"> Office</a><br/>
-                    – Création de pages Web statiques et dynamiques<br/>
-                    – Ecriture de programme en langage C, C++. Console ou graphique, HTML, XML, PHP<br/>
-                    – Ecriture de requ&ecirc;tes SQL pour la gestion de base de donn&eacute;es<br/>
-                    – Installation d’un syst&egrave;me d’exploitation<br/> <br/>
-                
-                <strong>Langues:</strong><br/>
-                  - Français (langue maternelle)<br/>
-                  - Anglais (niveau B2 - Certification Linguaskill Business)<br/>
-                  - Allemand (niveau A1)
-            </div>
-            <div class="section">
-                <h2>Divers</h2>
-                <strong>Loisirs:</strong><br/>
-                Sports Mécaniques - Musique – Pyrotechnie - Jeux vidéo - Cinéma<br/>
-             </div>
+    <section>
+        <div class="photo">
+            <img src="Photo_Identite_Matthieu_Hedoin.jpg" alt="Ma photo de profil">
         </div>
-     </body>
-</html>
+        <div class="prez">
+            <h2>Qui suis-je ?</h2>
+            <p>Diplômé d'une Licence Professionnelle "R&eacute;seaux et G&eacute;nie Informatique" (PROMEO Beauvais), je décide de me réorienter ensuite vers la mécanique moto.            
+            <a href="Matthieu_HEDOIN_CV.pdf" download>Télécharger mon CV</a>
+            <a href="LM_HDN.pdf" download>Télécharger ma lettre de motivation</a>
+        </div>
+        <div class="contact">
+            <h2>Informations de contact</h2>
+            <div class="contact-flex">
+                <p><b>Nom :</b> </p>
+                <p>HEDOIN Matthieu</p>
+            </div>
+            <div class="contact-flex">
+                <p><b>Adresse :</b> </p>
+                <p>3 rue des Ebouloirs - 80250 Jumel</p>
+            </div>
+            <div class="contact-flex">
+                <p><b>Téléphone :</b></p>
+                <p><a href="tel:+33610567857">06 10 56 78 57</a></p>
+            </div>
+            <div class="contact-flex">
+                <p><b>Mail :</b> </p>
+                <p><a href="mailto:hedoinm@gmail.com">hedoinm@gmail.com</a></p>
+            </div>
+            <div class="contact-flex">
+                <p><b>Permis :</b></p>
+                <p>B / <a>A2</a> (en cours)</p>
+            </div>
+            <div class="social">
+                <a href="https://www.facebook.com/profile.php?id=100010020730851"><img src="https://cdn.pixabay.com/photo/2015/05/17/10/51/facebook-770688_1280.png" alt="Logo Facebook"></a>
+                <a href="https://twitter.com/hdnmtt"><img src="https://cdn.pixabay.com/photo/2018/06/22/19/03/logo-3491390_960_720.png" alt="Logo Twitter"></a>
+                <a href="https://www.linkedin.com/in/matthieu-h%C3%A9doin-1b4348209/"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/LinkedIn_logo_initials.png/768px-LinkedIn_logo_initials.png" alt="Logo LinkedIn"></a>
+            </div>
+        </div>
+    </section>
+    
+    <div id="curriculum">
+    <section>
+        <h2>Expériences professionnelles</h2>
+        <div class="exp">
+            <div class="exp-logo">
+                <a href="#"><img src="https://www.agence-ewill.com/typo3temp/assets/_processed_/3/b/csm_footer-logo_925aa05d23.png" alt="Logo Agence EWILL"></a>
+            </div>
+            <div class="exp-info">
+                <h3>D&eacute;veloppeur Back-End Apprenti</h3>
+                <h4>Agence EWILL</h4>
+                <h4>Novembre 2020 - Septembre 2021</h4>
+            </div>
+            <div class="exp-desc">
+                <p>Création de pages Web statiques et dynamiques, création de sites Wordpress et Typo3, gestion de sites</p>
+            </div>
+        </div>
+        <div class="exp">
+            <div class="exp-logo">
+                <a href="#"><img src="https://www.noriap.com/hubfs/logos/logo%20-%20noriap%20-%20dark.svg" alt="Logo du groupe Noriap"></a>
+            </div>
+            <div class="exp-info">
+                <h3>Emploi saisonnier - Magasinier</h3>
+                <h4>Noriap</h4>
+                <h4>Juillet 2020</h4>
+            </div>
+            <div class="exp-desc">
+                <p>Réception des marchandises, prises d'échantillons, mesures de contrôle</p>
+            </div>
+        </div>
+        <div class="exp">
+            <div class="exp-logo">
+                <a href="#"><img src="https://www.linkin.farm/storage/images/sites/logo/ozKEnw7MCGOYjEglBnK4aYzsJJe9PKMTl1lNHzIq.png" alt="Logo de SARL POM'RECOLTE"></a>
+            </div>
+            <div class="exp-info">
+                <h3>Emploi saisonnier - Ouvrier agricole</h3>
+                <h4>Pom'recolte</h4>
+                <h4>Aout 2019</h4>
+            </div>
+            <div class="exp-desc">
+                <p>Tri de pommes de terre</p>
+            </div>
+        </div>
+    </section>
+    <section>
+        <h2>Expérience associative</h2>
+        <div class="exp">
+            <div class="exp-logo" style="background-color:#0A0521;">
+                <a href="https://www.souffledelaterre.com/"><img src="https://www.souffledelaterre.com/wp-content/uploads/2020/01/LSDLT2020-LOGO-BLANC.png" alt="Logo Souffle"></a>
+            </div>
+            <div class="exp-info">
+                <h3>B&eacute;n&eacute;vole</h3>
+                <h4>Les Spectacles d'Ailly sur Noye</h4>
+                <h4>Saison 2019 - Présent</h4>
+            </div>
+            <div class="exp-desc">
+                <p>Equipe artificiers</p>
+            </div>
+        </div>
+    </section>
+    
+    <section>
+        <h2>Formation</h2>
+        <div class="exp">
+            <div class="exp-logo">
+                <img src="https://www.cma-hautsdefrance.fr/wp-content/uploads/2020/10/logo-menu.png" alt="Logo IREAM">
+            </div>
+            <div class="exp-info">
+                <h3>CAP Maintenance de véhicules Option C : Motocycles</h3>
+                <h4>Chambre des métiers et de l'artisanat, Amiens (2022 - )</h4>
+            </div>
+        </div>
+        <div class="exp">
+            <div class="exp-logo">
+                <img src="promeo.png" alt="Logo PROMEO">
+            </div>
+            <div class="exp-info">
+                <h3>Licence Professionnelle R&eacute;seaux et G&eacute;nie Informatique</h3>
+                <h4>PROMEO Beauvais (2020 - 2021)</h4>
+            </div>
+        </div>
+        <div class="exp">
+            <div class="exp-logo">
+                <a href="#"><img src="https://edouard-branly.ac-amiens.fr/wp-content/uploads/2020/03/LOGO-Branly-e1584258865763.png" alt="Logo Lycée Edouard Branly"></a>
+            </div>
+            <div class="exp-info">
+                <h3>BTS Syst&egrave;me Num&eacute;riques option Informatique et R&eacute;seaux</h3>
+                <h4>Lyc&eacute;e Edouard Branly, Amiens - (2018 - 2020)</h4>
+            </div>
+            
+        </div>
+        <div class="exp">
+            <div class="exp-logo">
+                <a href=""><img src="https://edouard-branly.ac-amiens.fr/wp-content/uploads/2020/03/LOGO-Branly-e1584258865763.png" alt=""></a>
+            </div>
+            <div class="exp-info">
+                <h3>Bac S sp&eacute;cialit&eacute; Sciences de l'ing&eacute;nieur</h3>
+                <h4>Lyc&eacute;e Edouard Branly, Amiens - (2016 - 2018)</h4>
+            </div>
+                       
+        </div>
+    </section>
+    
+    <section>
+        <h2>Compétences</h2>
+        <h3 class="h3gauche">Professionnelles</h3>
+        <div class="comp2">
+            <p>HTML / CSS</p>
+            <P>70%</P>
+            <meter  min="0" max="100"
+                    low="50" high="80" optimum="99"
+                    value="70">70%
+            </meter>
+        </div>
+        <div class="comp2">
+            <p>PHP / MySQL</p>
+            <p>50%</p>            
+            <meter  min="0" max="100"
+                    low="50" high="80" optimum="99"
+                    value="49">50%
+            </meter>
+        </div>
+        <div class="comp2">
+            <p>JavaScript</p>
+            <p>50%</p>
+            <meter  min="0" max="100"
+                    low="50" high="80" optimum="99"
+                    value="49">50%
+            </meter>
+        </div>
+        
+        <h3 class="h3gauche">Personnelles</h3>
+        <div class="comp2">
+            <p>Créativité</p>
+            <p>95%</p>
+            <div class="conteneur-barre2"><span class="barre c95"></span></div>
+        </div>
+        <div class="comp2">
+            <p>Adaptation</p>
+            <p>100%</p>
+            <div class="conteneur-barre2"><span class="barre c100"></span></div>
+        </div>
+        <div class="comp2">
+            <p>Sérieux</p>
+            <p>95%</p>
+            <div class="conteneur-barre2"><span class="barre c95"></span></div>
+        </div>
+        <div class="comp2">
+            <p>Polyvalence</p>
+            <p>95%</p>
+            <div class="conteneur-barre2"><span class="barre c95"></span></div>
+        </div>
+    </section>
+    
+    <section>
+        <h2>Centres d'intérêt</h2>
+        <figure class="interet">
+            <img src="https://img.redbull.com/images/c_crop,x_1111,y_0,h_3000,w_3333/c_fill,w_860,h_782/q_auto,f_auto/redbullcom/2018/07/17/65873810-4744-4b16-a6b9-fd1758350630/enduro-collection" alt="Hard Enduro">
+            <figcaption>Sports M&eacute;caniques</figcaption>
+        </figure>
+        <figure class="interet">
+            <img src="tool-g658a58866_1280.png" alt="Bricolage">
+            <figcaption>Bricolage</figcaption>
+        </figure>
+        <figure class="interet">
+            <img src="controller-ga97dac5b1_1280.png" alt="Gaming">
+            <figcaption>Jeux vidéos</figcaption>
+        </figure>
+        <figure class="interet">
+            <img src="livre.jpg" alt="Littérature">
+            <figcaption>Littérature</figcaption>
+        </figure>
+    </section>
+    </div>
+    <footer>
+        <p>N'h&eacute;sitez pas à me contacter pour toute information suppl&eacute;mentaire.</p>
+    </footer>
+</body>
